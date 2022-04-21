@@ -1,6 +1,5 @@
 
 [![Overall](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk)](https://app.opslevel.com/services/catalog_service/maturity-report)
-[![All Checks available](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Fall_checks_available)](https://app.opslevel.com/services/catalog_service/maturity-report)
 [![Service Ownership](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Fservice_ownership)](https://app.opslevel.com/services/catalog_service/maturity-report)
 [![Security](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Fsecurity_2)](https://app.opslevel.com/services/catalog_service/maturity-report)
 [![Reliability](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Freliability_2)](https://app.opslevel.com/services/catalog_service/maturity-report)
