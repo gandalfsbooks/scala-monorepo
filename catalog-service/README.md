@@ -6,6 +6,7 @@
 [![Scalability](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Fscalability_2)](https://app.opslevel.com/services/catalog_service/maturity-report)
 [![Observability](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Fobservability_2)](https://app.opslevel.com/services/catalog_service/maturity-report)
 [![Quality](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2Fh4dYSGsAWr2B_kbSt0qB-AVP2uqsG7Dqs-fPUkPYnuk%2Fquality_2)](https://app.opslevel.com/services/catalog_service/maturity-report)
+
 This sample contains [sbt](http://www.scala-sbt.org/) build settings and test classes for illustrating multi-node testing with Akka.
 
 Please refer to the full documentation of [multi-node testing](http://doc.akka.io/docs/akka/2.5/dev/multi-node-testing.html) and the closely related [multi-jvm testing](http://doc.akka.io/docs/akka/2.5/dev/multi-jvm-testing.html) for details. There is also an section on [cluster testing](http://doc.akka.io/docs/akka/2.5/scala/cluster-usage.html#How_to_Test).
