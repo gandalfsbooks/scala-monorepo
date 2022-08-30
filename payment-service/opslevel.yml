@@ -1,0 +1,43 @@
+---
+version: 1
+service:
+  name: Payment Service
+  lifecycle: generally_available
+  tier: tier_4
+  product: Payment
+  owner: inventory_team
+  language: Ruby
+  framework: Sinatra
+  description: Manages payments.
+  aliases:
+  tags:
+  tools:
+  - name: Kubernetes
+    category: orchestrator
+    url: https://deploy.gandalfsbooks.com/payment-service
+    environment:
+  - name: Sentry
+    category: errors
+    url: https://gandalfsbooks.sentry.com/payment-service
+    environment:
+  - name: Pingdom
+    category: health_checks
+    url: https://gandalfsbooks.pingdom.com/payment-service
+    environment:
+  - name: Splunk
+    category: logs
+    url: https://logs.gandalfsbooks.com/payment-service
+    environment:
+  - name: GitHub
+    category: code
+    url: https://github.com/gandalfsbooks/scala-monorepo/tree/2.5/payment-service
+    environment:
+  - name: LaunchDarkly
+    category: feature_flag
+    url: https://launchdarkly.com/foo
+    environment:
+  - name: Issue Tracking
+    category: issue_tracking
+    url: https://gandalfsbooks.atlassian.net/jira/software/c/projects/BE/boards/1
+    environment:
+  dependencies:
