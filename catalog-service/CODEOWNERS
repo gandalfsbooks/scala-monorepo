@@ -1,0 +1,8 @@
+# file/directory user
+#
+
+*.rb              @toddg-opslevel
+
+app/              @ecohen-opslevel
+
+components/*.md   @ianroys-opslevel
