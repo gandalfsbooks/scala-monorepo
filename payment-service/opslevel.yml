@@ -5,7 +5,7 @@ service:
   lifecycle: generally_available
   tier: tier_4
   product: Payment
-  owner: inventory_team
+  owner: transactions_team
   language: Ruby
   framework: Sinatra
   description: Manages payments.
