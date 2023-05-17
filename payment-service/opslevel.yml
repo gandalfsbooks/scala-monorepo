@@ -6,7 +6,7 @@ service:
   tier: tier_4
   product: Payment
   owner: transactions_team
-  system: cart
+  system: support
   language: Ruby
   framework: Sinatra
   description: Manages payments.
