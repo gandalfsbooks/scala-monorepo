@@ -1,0 +1,174 @@
+$id: https://www.opslevel.com/opslevel.schema.yml
+$schema: http://json-schema.org/draft-07/schema#
+description: Validation schema for opslevel.yml
+type: object
+properties:
+  version:
+    $ref: '#/definitions/NullableNumber'
+  service:
+    $ref: '#/definitions/Service'
+  repository:
+    $ref: '#/definitions/Repository'
+oneOf:
+  - required:
+    - service
+  - required:
+    - repository
+additionalProperties: false
+definitions:
+  Service:
+    type: object
+    required:
+      - name
+    properties:
+      name:
+        $ref: '#/definitions/String'
+      description:
+        $ref: '#/definitions/NullableText'
+      owner:
+        $ref: '#/definitions/NullableAlias'
+      system:
+        $ref: '#/definitions/NullableAlias'
+      lifecycle:
+        $ref: '#/definitions/NullableAlias'
+      tier:
+        $ref: '#/definitions/NullableAlias'
+      product:
+        $ref: '#/definitions/NullableString'
+      language:
+        $ref: '#/definitions/NullableString'
+      framework:
+        $ref: '#/definitions/NullableString'
+      aliases:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/Alias'
+        uniqueItems: true
+      tags:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/Tag'
+        uniqueItems: true
+      tools:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/Tool'
+      repositories:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/ServiceRepository'
+      dependencies:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/ServiceDependency'
+        maxItems: 100
+        uniqueItems: true
+      alert_sources:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/ServiceAlertSource'
+        uniqueItems: true
+      properties:
+        $ref: '#/definitions/CustomProperties'
+    additionalProperties: false
+  Alias:
+    type: string
+    minLength: 1
+    maxLength: 255
+  CustomProperties:
+    type: [object, "null"]
+  ServiceAlertSource:
+    type: object
+    properties:
+      type:
+        type: string
+        enum: [pagerduty, opsgenie, datadog]
+      external_id:
+        $ref: '#/definitions/String'
+    additionalProperties: false
+  ServiceDependency:
+    type: object
+    properties:
+      alias:
+        $ref: '#/definitions/Alias'
+      notes:
+        $ref: '#/definitions/NullableText'
+    additionalProperties: false
+  Repository:
+    type: object
+    properties:
+      owner:
+        $ref: '#/definitions/NullableAlias'
+      tier:
+        $ref: '#/definitions/NullableAlias'
+      tags:
+        type: [array, "null"]
+        items:
+          $ref: '#/definitions/Tag'
+        uniqueItems: true
+    additionalProperties: false
+  ServiceRepository:
+    type: object
+    required:
+      - name
+      - provider
+    properties:
+      name:
+        $ref: '#/definitions/String'
+      provider:
+        type: string
+        enum: [github, gitlab, bitbucket]
+      display_name:
+        $ref: '#/definitions/NullableString'
+      path:
+        $ref: '#/definitions/NullableString'
+    additionalProperties: false
+  Tag:
+    type: object
+    required:
+      - key
+      - value
+    properties:
+      key:
+        type: string
+        pattern: ^[A-Za-z][0-9A-Za-z_.\/\\-]*$
+        minLength: 1
+        maxLength: 200
+        description: Key must start with a letter and only allows alphanumerics, underscores, dashes, periods, and slashes.
+      value:
+        type: string
+        minLength: 1
+    additionalProperties: false
+  Tool:
+    type: object
+    required:
+      - category
+      - url
+    properties:
+      category:
+        type: string
+        enum: [admin, api_documentation, architecture_diagram, code, continuous_integration, deployment, design_documentation, errors, feature_flag, health_checks, incidents, issue_tracking, logs, metrics, observability, orchestrator, resiliency, runbooks, security_scans, status_page, wiki, other]
+      url:
+        $ref: '#/definitions/ValidUrl'
+      name:
+        $ref: '#/definitions/NullableString'
+      environment:
+        $ref: '#/definitions/NullableString'
+    additionalProperties: false
+  NullableAlias:
+    type: [string, "null"]
+    maxLength: 255
+  String:
+    type: string
+    minLength: 1
+    maxLength: 255
+  NullableString:
+    type: [string, "null"]
+    maxLength: 255
+  NullableText:
+    type: [string, "null"]
+  NullableNumber:
+    type: [number, "null"]
+  ValidUrl:
+    type: string
+    pattern: "^https?://"
