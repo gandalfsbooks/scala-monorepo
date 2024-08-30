@@ -21,13 +21,13 @@ jobs:
     - name: Install dependencies
       run: npm install ajv js-yaml
 
-      - name: Find and validate all opslevel.yml files
-        run: |
-          # Find all opslevel.yml files in the repository
-          files=$(find . -name "opslevel.yml")
+    - name: Find and validate all opslevel.yml files
+      run: |
+        # Find all opslevel.yml files in the repository
+        files=$(find . -name "opslevel.yml")
           
-          # Loop through each file and run the validation
-          for file in $files; do
-            echo "Validating $file"
-            node validate.js "$file"
-          done
+        # Loop through each file and run the validation
+        for file in $files; do
+          echo "Validating $file"
+          node validate.js "$file"
+        done
