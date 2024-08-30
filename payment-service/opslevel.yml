@@ -12,6 +12,7 @@ service:
   description: Manages payments.
   aliases:
   tags:
+  - "foo:bar"
   tools:
   - name: Kubernetes
     category: orchestrator
