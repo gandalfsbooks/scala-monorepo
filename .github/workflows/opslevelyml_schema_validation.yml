@@ -22,4 +22,4 @@ jobs:
       run: npm install ajv js-yaml
 
     - name: Run schema validation
-      run: node validate.js
+      run: node tools/validate.js
