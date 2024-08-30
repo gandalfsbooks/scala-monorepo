@@ -29,5 +29,5 @@ jobs:
         # Loop through each file and run the validation
         for file in $files; do
           echo "Validating $file"
-          node validate.js "$file"
+          node tools/validate.js "$file"
         done
