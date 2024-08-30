@@ -11,7 +11,7 @@ const filePath = process.argv[2];
 
 try {
     // Load the schema from the opslevel.schema.yml file
-    const schemaContents = fs.readFileSync("opslevel.schema.yml", "utf8");
+    const schemaContents = fs.readFileSync("tools/opslevel.schema.yml", "utf8");
     const schema = yaml.load(schemaContents);
 
     const ajv = new Ajv();
