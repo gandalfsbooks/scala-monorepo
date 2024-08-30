@@ -3,7 +3,7 @@ name: opslevel.yml schema validation
 on:
   pull_request:
     paths:
-      - 'opslevel.yml'
+      - '**/opslevel.yml'
 
 jobs:
   validate:
