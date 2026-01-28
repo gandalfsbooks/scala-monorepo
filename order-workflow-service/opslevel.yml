@@ -1,0 +1,58 @@
+---
+version: 1
+component:
+  name: Order Workflow Service
+  type: service
+  lifecycle: beta
+  tier: tier_2
+  product: Order Pipeline
+  owner: order_management_team
+  system: cart
+  language: Scala
+  framework: Akka
+  description: 'Tracks the order workflow through all its stages post-creation. '
+  tags:
+  - key: kafka-topic
+    value: orders
+  - key: reorg-aug-2025
+    value: 'true'
+  repositories:
+  - name: gandalfsbooks/scala-monorepo
+    path: "/order-workflow-service"
+    provider: github
+  tools:
+  - name: Admin
+    category: admin
+    url: https://orders.gandalfsbooks.com/admin
+    environment:
+  - name: PagerDuty
+    category: incidents
+    url: https://gandalfsbooks.pagerduty.com/services/PVC123
+    environment:
+  - name: Business Metrics (Datadog)
+    category: metrics
+    url: https://gandalfsbooks.datadoghq.com/order_workflow
+    environment:
+  - name: RDS MySQL
+    category: other
+    url: https://gandalfsbooks.amazonaws.com/rds/order_workflow
+    environment:
+  - name: Kubernetes
+    category: orchestrator
+    url: https://deploy.gandalfsbooks.com/order_workflow
+    environment:
+  - name: Sentry
+    category: errors
+    url: https://gandalfsbooks.sentry.com/order_workflow_service
+    environment:
+  - name: Pingdom
+    category: health_checks
+    url: https://gandalfsbooks.pingdom.com/order_workflow
+    environment:
+  - name: Splunk
+    category: logs
+    url: https://logs.gandalfsbooks.com/order_management_service
+    environment:
+  dependencies:
+  - alias: fraud_detection_service
+  - alias: warehouse_management_service
