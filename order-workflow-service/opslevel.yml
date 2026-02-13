@@ -6,7 +6,7 @@ component:
   lifecycle: beta
   tier: tier_2
   product: Order Pipeline
-  owner: order_management_team
+  owner: orders
   system: cart
   language: Scala
   framework: Akka
