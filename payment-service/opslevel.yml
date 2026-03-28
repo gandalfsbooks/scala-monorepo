@@ -3,7 +3,7 @@ version: 1
 service:
   name: Payment Service
   lifecycle: generally_available
-  tier: tier_4
+  tier: tier_3
   product: Payment
   owner: transactions_team
   system: cart
